@@ -8,13 +8,31 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+    <script>
+    "use strict";
+    //Unique ID assigned given by server
+    //(kept as a constant here for testing purposes)
+      var SESSION_ID = 987987;
+
+      //requests the class information files
+      $.post("/student/classes", SESSION_ID, function(data, status) {
+        if (status == "success"){
+          for (let i in data){
+            loadStudentClass(data[i]);
+          }
+        }
+        else {
+          console.log(status);
+        }
+      });
+    </script>
+
     <div class="header">
       <h1>
         Bonus Points Tracker
       </h1>
       <div class="login">
         <a href="/">Logout</a>
-
       </div>
     </div>
     <div class="content">
@@ -23,38 +41,17 @@
         <input type="text" value="" placeholder="Class Code" id="code">
         <button type="button" id="join">Join</button>
       </div>
-      <ul id="list">
-        <div>
-          <button type="button">Class 1</button>
-          <button class="delete" type="button">Leave Class</button>
-          <div class="hide">
-            <p>Teacher's name</p>
-            <p>Bonus Points: #</p>
-          </div>
-        </div>
-        <div>
-          <button type="button">Class 2</button>
-          <button class="delete" type="button">Leave Class</button>
-          <div class="hide">
-            <p>Teacher's name</p>
-            <p>Bonus Points: #</p>
-          </div>
-        </div>
-        <div>
-          <button type="button">Class 3</button>
-          <button class="delete" type="button">Leave Class</button>
-          <div class="hide">
-            <p>Teacher's name</p>
-            <p>Bonus Points: #</p>
-          </div>
-        </div>
-      </ul>
+
+      <ul id="list"></ul>
+
       <div id="temp" style="display: none;">
-        <button type="button">Class #</button>
+        <button type="button" id="toggleclass">Class #</button>
         <button class="delete" type="button">Leave Class</button>
         <div class="hide">
-          <p>Teacher's Name</p>
-          <p>Bonus Points: #</p>
+          <p class="line">Teacher:</p>
+          <p id="teachername">Name</p>
+          <p class="line">Bonus Points:</p>
+          <p id="points">#</p>
         </div>
       </div>
     </div>

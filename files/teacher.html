@@ -15,10 +15,7 @@
     var SESSION_ID = 120123;
 
     //requests the class information files
-    $.ajax({type: "POST",
-    url: "/teacher/classes",
-    data:  SESSION_ID,
-    success: function(data, status) {
+    $.post("/teacher/classes", SESSION_ID, function(data, status) {
       if (status == "success"){
         for (let i in data){
           loadTeacherClass(data[i]);
@@ -27,12 +24,6 @@
       else {
         console.log(status);
       }
-    },
-    error:   function(jqXHR, textStatus, errorThrown) {
-          alert("Error, status = " + textStatus + ", " +
-                "error thrown: " + errorThrown
-          );
-        }
     });
   </script>
   <div class="header">
@@ -53,12 +44,13 @@
     <ul id="list"></ul>
 
     <div id="temp" style="display: none;">
-      <button type="button">Class 1</button>
+      <button type="button" id="toggleclass">Class 1</button>
       <button class="delete" type="button">Delete Class</button>
       <div class="hide">
         <p id="code">Class Code</p>
       </div>
     </div>
+    
     <div class="student" id="tempStudent" style="display: none">
       <p class="name">John Doe</p>
       <p class="points">3</p>

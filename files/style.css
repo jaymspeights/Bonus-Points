@@ -47,3 +47,7 @@ h1 {
   float: right;
   margin-right: 5px;
 }
+.line {
+  float: left;
+  margin: 0 10px;
+}

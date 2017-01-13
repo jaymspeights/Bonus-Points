@@ -33,6 +33,12 @@ app.post("/teacher/classes", function(req, res){
   console.log("file sent")
 });
 
+//called when student requests class list
+app.post("/student/classes", function(req, res){
+  res.sendFile(__dirname + "/files/demo2.json");
+  console.log("file sent")
+});
+
 //serves a file from files folder when requested
 app.get("/*", function(req, res){
   res.sendFile(__dirname + "/files" + req.url);
