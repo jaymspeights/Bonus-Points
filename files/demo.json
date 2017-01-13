@@ -1,0 +1,14 @@
+[
+  {"name": "CS 2336", "code": "A5FC29", "student":[
+                                                    {"name": "John Doe", "points": 3},
+                                                    {"name": "Peggy Sue", "points": 5},
+                                                    {"name": "Zack Smith", "points": -1}
+                                                    ]
+  },
+  {"name": "CS 3345", "code": "CB32AA", "student":[
+                                                    {"name": "Jay Speights", "points": 100},
+                                                    {"name": "Foo Bar", "points": 0},
+                                                    {"name": "Lorem Ipsum", "points": -1}
+                                                    ]
+  }
+]

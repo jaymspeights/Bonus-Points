@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bonus Points</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        Bonus Points Tracker
+      </h1>
+      <div class="login">
+        <a href="/">Logout</a>
+
+      </div>
+    </div>
+    <div class="content">
+      <button type="button" id="menu">Join a class</button>
+      <div class="hide">
+        <input type="text" value="" placeholder="Class Code" id="code">
+        <button type="button" id="join">Join</button>
+      </div>
+      <ul id="list">
+        <div>
+          <button type="button">Class 1</button>
+          <button class="delete" type="button">Leave Class</button>
+          <div class="hide">
+            <p>Teacher's name</p>
+            <p>Bonus Points: #</p>
+          </div>
+        </div>
+        <div>
+          <button type="button">Class 2</button>
+          <button class="delete" type="button">Leave Class</button>
+          <div class="hide">
+            <p>Teacher's name</p>
+            <p>Bonus Points: #</p>
+          </div>
+        </div>
+        <div>
+          <button type="button">Class 3</button>
+          <button class="delete" type="button">Leave Class</button>
+          <div class="hide">
+            <p>Teacher's name</p>
+            <p>Bonus Points: #</p>
+          </div>
+        </div>
+      </ul>
+      <div id="temp" style="display: none;">
+        <button type="button">Class #</button>
+        <button class="delete" type="button">Leave Class</button>
+        <div class="hide">
+          <p>Teacher's Name</p>
+          <p>Bonus Points: #</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
